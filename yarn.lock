@@ -3958,7 +3958,7 @@ jest-config@^26.6.3:
     micromatch "^4.0.2"
     pretty-format "^26.6.2"
 
-jest-diff@^26.0.0, jest-diff@^26.6.2:
+jest-diff@^26.0.0, jest-diff@^26.1.0, jest-diff@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-26.6.2.tgz#1aa7468b52c3a68d7d5c5fdcdfcd5e49bd164394"
   integrity sha512-6m+9Z3Gv9wN0WFVasqjCL/06+EFCMTqDEUl/b87HYK2rAPTyfz4ZIuSlPhY51PIQRWx5TaxeF1qmXKe9gfN3sA==
@@ -4023,7 +4023,7 @@ jest-environment-node@^26.6.2:
     jest-mock "^26.6.2"
     jest-util "^26.6.2"
 
-jest-get-type@^26.3.0:
+jest-get-type@^26.0.0, jest-get-type@^26.3.0:
   version "26.3.0"
   resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-26.3.0.tgz#e97dc3c3f53c2b406ca7afaed4493b1d099199e0"
   integrity sha512-TpfaviN1R2pQWkIihlfEanwOXK0zcxrKEE4MlU6Tn7keoXdN6/3gK/xl0yEh8DOunn5pOVGKf8hB4R9gVh04ig==
@@ -4109,6 +4109,16 @@ jest-matcher-utils@^26.6.2:
     jest-diff "^26.6.2"
     jest-get-type "^26.3.0"
     pretty-format "^26.6.2"
+
+jest-matcher-utils@~26.1.0:
+  version "26.1.0"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-26.1.0.tgz#cf75a41bd413dda784f022de5a65a2a5c73a5c92"
+  integrity sha512-PW9JtItbYvES/xLn5mYxjMd+Rk+/kIt88EfH3N7w9KeOrHWaHrdYPnVHndGbsFGRJ2d5gKtwggCvkqbFDoouQA==
+  dependencies:
+    chalk "^4.0.0"
+    jest-diff "^26.1.0"
+    jest-get-type "^26.0.0"
+    pretty-format "^26.1.0"
 
 jest-message-util@^24.9.0:
   version "24.9.0"
@@ -4669,7 +4679,7 @@ lodash.toarray@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
   integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
 
-lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20:
+lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@~4.17.15:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -5459,7 +5469,7 @@ prettier@~2.2.1:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
   integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
 
-pretty-format@^26.0.0, pretty-format@^26.6.2:
+pretty-format@^26.0.0, pretty-format@^26.1.0, pretty-format@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-26.6.2.tgz#e35c2705f14cb7fe2fe94fa078345b444120fc93"
   integrity sha512-7AeGuCYNGmycyQbCqd/3PWH4eOoX/OiCa0uphp57NVTeAGdJGaAliecxwBDHYQCIvrW7aDBZCYeNTP/WX69mkg==
@@ -6358,6 +6368,14 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+
+strong-mock@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-6.0.0.tgz#6eb5a1c8c1bd6e195337b4e29d92fd308d246766"
+  integrity sha512-Ekw7rviKVfa2EwZS1xAos++w5Tyn5+BsELqM0UqAgGTo7KA9/ZK5aiN46j88RzyXD1zEfGNYyFIDpwX60vvD6g==
+  dependencies:
+    jest-matcher-utils "~26.1.0"
+    lodash "~4.17.15"
 
 superagent@^6.1.0:
   version "6.1.0"
