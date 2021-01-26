@@ -1,45 +1,19 @@
-import { Injectable } from "@nestjs/common";
+import { Inject, Injectable } from "@nestjs/common";
 import { CatModel, CatsRepository } from "./CatsRepository";
-
-const cats: CatModel[] = [
-  {
-    id: 1,
-    name: "Misty",
-  },
-  {
-    id: 2,
-    name: "Pixy",
-  },
-  {
-    id: 3,
-    name: "Polly",
-  },
-  {
-    id: 4,
-    name: "Biby",
-  },
-  {
-    id: 5,
-    name: "Cutie",
-  },
-  {
-    id: 6,
-    name: "Didi",
-  },
-];
 
 @Injectable()
 export class InMemoryCatsRepository implements CatsRepository {
-  // eslint-disable-next-line class-methods-use-this
-  findAll = async (): Promise<CatModel[]> => Promise.resolve(cats);
+  constructor(@Inject("cats") private readonly cats: CatModel[]) {}
+
+  findAll = async (): Promise<CatModel[]> => Promise.resolve(this.cats);
 
   add = async (newCat: Omit<CatModel, "id">): Promise<CatModel> => {
     const cat: CatModel = {
-      id: cats.length + 1,
+      id: this.cats.length + 1,
       name: newCat.name,
     };
 
-    cats.push(cat);
+    this.cats.push(cat);
 
     return cat;
   };
