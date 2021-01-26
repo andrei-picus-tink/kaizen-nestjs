@@ -31,7 +31,16 @@ const cats: CatModel[] = [
 @Injectable()
 export class InMemoryCatsRepository implements CatsRepository {
   // eslint-disable-next-line class-methods-use-this
-  findAll(): Promise<CatModel[]> {
-    return Promise.resolve(cats);
-  }
+  findAll = async (): Promise<CatModel[]> => Promise.resolve(cats);
+
+  add = async (newCat: Omit<CatModel, "id">): Promise<CatModel> => {
+    const cat: CatModel = {
+      id: cats.length + 1,
+      name: newCat.name,
+    };
+
+    cats.push(cat);
+
+    return cat;
+  };
 }

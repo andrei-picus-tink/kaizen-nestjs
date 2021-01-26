@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { CatsRepository } from "./CatsRepository";
-import { CatDTO, CatsService } from "../controllers/CatsService";
+import { CatDTO, CatsService, CreateCatDTO } from "../controllers/CatsService";
 
 @Injectable()
 export class CatsRepositoryService implements CatsService {
@@ -10,5 +10,9 @@ export class CatsRepositoryService implements CatsService {
 
   findAll(): Promise<CatDTO[]> {
     return this.catsRepo.findAll();
+  }
+
+  add(newCat: CreateCatDTO): Promise<CatDTO> {
+    return this.catsRepo.add(newCat);
   }
 }

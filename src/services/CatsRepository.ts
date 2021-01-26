@@ -5,4 +5,5 @@ export type CatModel = {
 
 export interface CatsRepository {
   findAll: () => Promise<CatModel[]>;
+  add: (newCat: Omit<CatModel, "id">) => Promise<CatModel>;
 }

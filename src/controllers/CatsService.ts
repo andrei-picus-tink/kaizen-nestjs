@@ -3,6 +3,11 @@ export type CatDTO = {
   name: string;
 };
 
+export type CreateCatDTO = {
+  name: string;
+};
+
 export interface CatsService {
   findAll: () => Promise<CatDTO[]>;
+  add: (newCat: CreateCatDTO) => Promise<CatDTO>;
 }
