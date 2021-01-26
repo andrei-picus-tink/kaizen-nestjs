@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { CatsRepository } from "./CatsRepository";
-import { CatDTO, CatsService, CreateCatDTO } from "../controllers/CatsService";
+import { CatDTO, CatsService, CreateCatDTO } from "./CatsService";
 
 @Injectable()
 export class CatsRepositoryService implements CatsService {
