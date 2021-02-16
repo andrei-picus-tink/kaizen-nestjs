@@ -1,6 +1,10 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { getProviders, signIn, signOut, useSession } from "next-auth/client";
 import { GetStaticProps } from "next";
 import React from "react";
+import { CatsContainer } from "../components/CatsContainer";
+import { Cats } from "../components/Cats";
+import { catsService } from "../services/cats";
 
 type Props = {
   providers: any;
@@ -42,6 +46,9 @@ export default function SignIn({ providers }: Props) {
       <button type="button" onClick={() => signOut()}>
         Log out{" "}
       </button>
+      <CatsContainer service={catsService}>
+        {(props) => <Cats {...props} />}
+      </CatsContainer>
     </>
   );
 }
