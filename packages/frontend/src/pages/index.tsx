@@ -37,6 +37,9 @@ export default function SignIn({ providers }: Props) {
             </button>
           </div>
         ))}
+        <CatsContainer service={catsService}>
+          {(props) => <Cats {...props} />}
+        </CatsContainer>
       </>
     );
 

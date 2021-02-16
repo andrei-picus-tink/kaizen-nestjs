@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Inject, Post } from "@nestjs/common";
 import { CatDTO, CatsService, CreateCatDTO } from "../services/CatsService";
+import { Public } from "../../auth.guard";
 
 @Controller("cats")
 export class CatsController {
@@ -7,6 +8,7 @@ export class CatsController {
     @Inject("CatsService") private readonly catsService: CatsService
   ) {}
 
+  @Public()
   @Get()
   findAll(): Promise<CatDTO[]> {
     return this.catsService.findAll();
