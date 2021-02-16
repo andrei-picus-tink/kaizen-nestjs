@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.0.1",
   "scripts": {
-    "start": "NEXTAUTH_URL=http://localhost:3001 next dev -p 3001"
+    "start": "next dev"
   },
   "dependencies": {
     "next": "^10.0.6",
