@@ -2,6 +2,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth, { InitOptions } from "next-auth";
 import Providers from "next-auth/providers";
 
+if (!process.env.JWT_SECRET) {
+  throw new Error("JWT secret missing");
+}
+
 const options: InitOptions = {
   providers: [
     Providers.Credentials({
@@ -15,6 +19,7 @@ const options: InitOptions = {
       }),
     }),
   ],
+  jwt: { secret: process.env.JWT_SECRET },
   session: { jwt: true },
 };
 
