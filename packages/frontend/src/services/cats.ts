@@ -9,7 +9,12 @@ export const catsService: CatsService = {
   fetchCats: () =>
     fetch("http://localhost:3001/cats", {
       credentials: "include",
-    }).then((r) => r.json()),
+    }).then((r) => {
+      if (!r.ok) {
+        return Promise.reject(new Error(r.statusText));
+      }
+      return r.json();
+    }),
 
   postCat: () =>
     fetch("http://localhost:3001/cats", {
@@ -19,5 +24,10 @@ export const catsService: CatsService = {
       headers: {
         "Content-Type": "application/json",
       },
+    }).then((r) => {
+      if (!r.ok) {
+        return Promise.reject(new Error(r.statusText));
+      }
+      return r.json();
     }),
 };
