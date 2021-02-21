@@ -5,7 +5,7 @@ export interface CatsService {
   postCat: () => Promise<Response>;
 }
 
-const API_PATH = process.env.API_PATH || "http://localhost:3001";
+const API_PATH = process.env.NEXT_PUBLIC_API_PATH || "http://localhost:3001";
 
 export const catsService: CatsService = {
   fetchCats: () =>
