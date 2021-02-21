@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { getProviders, signIn, signOut, useSession } from "next-auth/client";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import React from "react";
 import { CatsContainer } from "../components/CatsContainer";
 import { Cats } from "../components/Cats";
@@ -10,7 +10,7 @@ type Props = {
   providers: any;
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const providers = await getProviders();
 
   if (!providers) {
