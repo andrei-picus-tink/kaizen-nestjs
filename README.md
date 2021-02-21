@@ -20,6 +20,6 @@ yarn
 ```sh
 export JWT_SECRET=blabla
  
-cd packages/backend && yarn start
-cd packages/frontend && yarn start
+cd packages/backend && yarn dev
+cd packages/frontend && yarn dev
 ```
