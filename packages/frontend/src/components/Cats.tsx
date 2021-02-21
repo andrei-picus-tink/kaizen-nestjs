@@ -7,6 +7,7 @@ export const Cats = ({ cats, loading, error, createCat }: CatsProps) => {
 
   const handleCreate = async () => {
     setCreateLoading(true);
+    setCreateError(undefined);
 
     try {
       await createCat();
