@@ -5,9 +5,11 @@ export interface CatsService {
   postCat: () => Promise<Response>;
 }
 
+const API_PATH = process.env.API_PATH || "http://localhost:3001";
+
 export const catsService: CatsService = {
   fetchCats: () =>
-    fetch("http://localhost:3001/cats", {
+    fetch(`${API_PATH}/cats`, {
       credentials: "include",
     }).then((r) => {
       if (!r.ok) {
@@ -17,7 +19,7 @@ export const catsService: CatsService = {
     }),
 
   postCat: () =>
-    fetch("http://localhost:3001/cats", {
+    fetch(`${API_PATH}/cats`, {
       method: "post",
       credentials: "include",
       body: JSON.stringify({ name: "bibby" }),
