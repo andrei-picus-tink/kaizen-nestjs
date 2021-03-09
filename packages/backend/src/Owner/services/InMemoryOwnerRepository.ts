@@ -2,7 +2,7 @@ import { Inject } from "@nestjs/common";
 import { CreateOwner, Owner, OwnerClient } from "./OwnerClient";
 
 export class InMemoryOwnerRepository implements OwnerClient {
-  constructor(@Inject() private owners: Owner[]) {}
+  constructor(@Inject("owners") private owners: Owner[]) {}
 
   create = async (owner: CreateOwner): Promise<Owner> => {
     const newOwner: Owner = {
