@@ -1,10 +1,11 @@
 import { Module } from "@nestjs/common";
 import { APP_GUARD } from "@nestjs/core";
-import { CatModule } from "./Cat/Cat.module";
 import { AuthGuard } from "./auth.guard";
+import { CatModule } from "./Cat/Cat.module";
+import { OwnerModule } from "./Owner/Owner.module";
 
 @Module({
-  imports: [CatModule],
+  imports: [CatModule, OwnerModule],
   controllers: [],
   providers: [
     {
