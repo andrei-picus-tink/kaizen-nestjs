@@ -1,5 +1,5 @@
-import { Owner } from "@kaizen/backend/src/Owner/services/OwnerClient";
-import { InMemoryOwnerRepository } from "@kaizen/backend/src/Owner/services/InMemoryOwnerRepository";
+import { Owner } from "./OwnerClient";
+import { InMemoryOwnerRepository } from "./InMemoryOwnerRepository";
 
 describe("InMemoryOwnerRepository", () => {
   const owners: Owner[] = [

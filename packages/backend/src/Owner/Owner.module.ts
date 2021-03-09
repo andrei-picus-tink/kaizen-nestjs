@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
-import { InMemoryOwnerRepository } from "@kaizen/backend/src/Owner/services/InMemoryOwnerRepository";
-import { Owner } from "@kaizen/backend/src/Owner/services/OwnerClient";
+import { InMemoryOwnerRepository } from "./services/InMemoryOwnerRepository";
+import { Owner } from "./services/OwnerClient";
+import { OwnerController } from "./controllers/OwnerController";
 
 const owners: Owner[] = [
   {
@@ -15,7 +16,7 @@ const owners: Owner[] = [
 
 @Module({
   imports: [],
-  controllers: [],
+  controllers: [OwnerController],
   providers: [
     { provide: "OwnerClient", useClass: InMemoryOwnerRepository },
     { provide: "owners", useValue: owners },

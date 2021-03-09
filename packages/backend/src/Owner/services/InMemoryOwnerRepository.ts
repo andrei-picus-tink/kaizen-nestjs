@@ -1,9 +1,5 @@
 import { Inject } from "@nestjs/common";
-import {
-  CreateOwner,
-  Owner,
-  OwnerClient,
-} from "@kaizen/backend/src/Owner/services/OwnerClient";
+import { CreateOwner, Owner, OwnerClient } from "./OwnerClient";
 
 export class InMemoryOwnerRepository implements OwnerClient {
   constructor(@Inject() private owners: Owner[]) {}
