@@ -11,6 +11,7 @@ export class InMemoryCatRepository implements CatClient {
     const cat: Cat = {
       id: this.cats.length + 1,
       name: newCat.name,
+      owner: newCat.owner,
     };
 
     this.cats.push(cat);

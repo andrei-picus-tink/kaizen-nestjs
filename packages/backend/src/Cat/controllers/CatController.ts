@@ -15,6 +15,10 @@ export class CatController {
 
   @Post()
   addCat(@Body() newCat: CreateCatDTO): Promise<CatDTO> {
-    return this.catClient.add(newCat);
+    return this.catClient.add({
+      ...newCat,
+      // TODO: get from JWT
+      owner: 1,
+    });
   }
 }

@@ -6,10 +6,12 @@ describe("InMemoryCatRepository", () => {
     {
       id: 1,
       name: "Cat 1",
+      owner: 1,
     },
     {
       id: 2,
       name: "Cat 2",
+      owner: 2,
     },
   ];
 
@@ -20,11 +22,11 @@ describe("InMemoryCatRepository", () => {
   });
 
   it("should add a new cat", async () => {
-    const newCat: CreateCat = { name: "new" };
+    const newCat: CreateCat = { name: "new", owner: 3 };
 
     const client = new InMemoryCatRepository(cats);
 
-    expect(await client.add({ name: "new" })).toMatchObject(newCat);
+    expect(await client.add(newCat)).toMatchObject(newCat);
 
     expect(await client.findAll()).toContainEqual(
       expect.objectContaining({ name: "new" })

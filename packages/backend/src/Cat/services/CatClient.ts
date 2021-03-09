@@ -1,6 +1,7 @@
 export type Cat = {
   id: number;
   name: string;
+  owner: number;
 };
 
 export type CreateCat = Omit<Cat, "id">;
