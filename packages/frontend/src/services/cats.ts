@@ -9,7 +9,7 @@ const API_PATH = process.env.NEXT_PUBLIC_API_PATH || "http://localhost:3001";
 
 export const catsService: CatsService = {
   fetchCats: () =>
-    fetch(`${API_PATH}/cats`, {
+    fetch(`${API_PATH}/cat`, {
       credentials: "include",
     }).then((r) => {
       if (!r.ok) {
@@ -19,7 +19,7 @@ export const catsService: CatsService = {
     }),
 
   postCat: () =>
-    fetch(`${API_PATH}/cats`, {
+    fetch(`${API_PATH}/cat`, {
       method: "post",
       credentials: "include",
       body: JSON.stringify({ name: "bibby" }),
