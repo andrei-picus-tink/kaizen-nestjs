@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Inject, Post } from "@nestjs/common";
-import { CatDTO, CreateCatDTO } from "../services/CatService";
 import { Public } from "../../auth.guard";
 import { CatClient } from "../services/CatClient";
+import { CatDTO, CreateCatDTO } from "@kaizen/dto/cat.dto";
 
 @Controller("cat")
 export class CatController {

@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "@kaizen/frontend",
   "version": "0.0.1",
   "scripts": {
     "build": "next build",
@@ -10,7 +10,8 @@
     "next": "^10.0.6",
     "next-auth": "^3.5.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "@kaizen/dto": "1.0.0"
   },
   "devDependencies": {
     "@types/next-auth": "^3.1.24",
