@@ -5,10 +5,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2017",
-    "types": ["jest"],
-    "paths": {
-      "@kaizen/*": ["./*"]
-    },
-    "baseUrl": "./packages"
+    "types": ["jest"]
   }
 }
