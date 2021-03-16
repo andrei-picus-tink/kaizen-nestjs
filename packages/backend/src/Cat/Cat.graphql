@@ -4,9 +4,9 @@ type Query {
 }
 
 type Cat {
-    id: Int
-    name: String
-    owner: Owner
+    id: Int!
+    name: String!
+    owner: Owner!
 }
 
 type Owner {
