@@ -1,10 +1,10 @@
 import { Module } from "@nestjs/common";
 import { InMemoryOwnerRepository } from "./services/InMemoryOwnerRepository";
-import { Owner } from "./services/OwnerClient";
+import { OwnerEntity } from "./services/OwnerClient";
 import { OwnerController } from "./controllers/OwnerController";
 import { CatOwnerResolver } from "../Cat/CatOwner.resolver";
 
-const owners: Owner[] = [
+const owners: OwnerEntity[] = [
   {
     id: 1,
     name: "Bob",

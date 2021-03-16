@@ -1,10 +1,10 @@
 import { Module } from "@nestjs/common";
 import { CatController } from "./controllers/CatController";
 import { InMemoryCatRepository } from "./services/InMemoryCatRepository";
-import { Cat } from "./services/CatClient";
+import { CatEntity } from "./services/CatClient";
 import { CatResolver } from "./Cat.resolver";
 
-const cats: Cat[] = [
+const cats: CatEntity[] = [
   {
     id: 1,
     name: "Misty",

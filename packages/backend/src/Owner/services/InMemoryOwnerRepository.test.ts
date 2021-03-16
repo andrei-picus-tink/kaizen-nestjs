@@ -1,8 +1,8 @@
-import { Owner } from "./OwnerClient";
+import { OwnerEntity } from "./OwnerClient";
 import { InMemoryOwnerRepository } from "./InMemoryOwnerRepository";
 
 describe("InMemoryOwnerRepository", () => {
-  const owners: Owner[] = [
+  const owners: OwnerEntity[] = [
     {
       id: 1,
       name: "Bob",

@@ -1,12 +1,12 @@
-export type Owner = {
+export type OwnerEntity = {
   id: number;
   name: string;
 };
 
-export type CreateOwner = Omit<Owner, "id">;
+export type CreateOwner = Omit<OwnerEntity, "id">;
 
 export interface OwnerClient {
-  findOne: (id: number) => Promise<Owner>;
-  findMany: (ids: number[]) => Promise<Owner[]>;
-  create: (owner: CreateOwner) => Promise<Owner>;
+  findOne: (id: number) => Promise<OwnerEntity>;
+  findMany: (ids: number[]) => Promise<OwnerEntity[]>;
+  create: (owner: CreateOwner) => Promise<OwnerEntity>;
 }

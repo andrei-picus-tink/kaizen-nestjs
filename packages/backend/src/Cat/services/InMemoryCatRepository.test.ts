@@ -1,8 +1,8 @@
-import { Cat, CreateCat } from "./CatClient";
+import { CatEntity, CreateCat } from "./CatClient";
 import { InMemoryCatRepository } from "./InMemoryCatRepository";
 
 describe("InMemoryCatRepository", () => {
-  const cats: Cat[] = [
+  const cats: CatEntity[] = [
     {
       id: 1,
       name: "Cat 1",

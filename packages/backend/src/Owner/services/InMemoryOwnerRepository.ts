@@ -1,11 +1,11 @@
 import { Inject } from "@nestjs/common";
-import { CreateOwner, Owner, OwnerClient } from "./OwnerClient";
+import { CreateOwner, OwnerEntity, OwnerClient } from "./OwnerClient";
 
 export class InMemoryOwnerRepository implements OwnerClient {
-  constructor(@Inject("owners") private owners: Owner[]) {}
+  constructor(@Inject("owners") private owners: OwnerEntity[]) {}
 
-  create = async (owner: CreateOwner): Promise<Owner> => {
-    const newOwner: Owner = {
+  create = async (owner: CreateOwner): Promise<OwnerEntity> => {
+    const newOwner: OwnerEntity = {
       ...owner,
       id: this.owners.length + 1,
     };
@@ -15,7 +15,7 @@ export class InMemoryOwnerRepository implements OwnerClient {
     return newOwner;
   };
 
-  findMany = async (ids: number[]): Promise<Owner[]> => {
+  findMany = async (ids: number[]): Promise<OwnerEntity[]> => {
     const owners = this.owners.filter((owner) => ids.includes(owner.id));
 
     if (owners.length !== ids.length) {
@@ -25,7 +25,7 @@ export class InMemoryOwnerRepository implements OwnerClient {
     return owners;
   };
 
-  findOne = async (id: number): Promise<Owner> => {
+  findOne = async (id: number): Promise<OwnerEntity> => {
     const owner = this.owners.find((owner) => owner.id === id);
 
     if (!owner) {

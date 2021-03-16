@@ -1,7 +1,7 @@
 import { Parent, ResolveField, Resolver } from "@nestjs/graphql";
-import { Owner, OwnerClient } from "../Owner/services/OwnerClient";
+import { OwnerEntity, OwnerClient } from "../Owner/services/OwnerClient";
 import { Inject } from "@nestjs/common";
-import { Cat } from "./services/CatClient";
+import { CatEntity } from "./services/CatClient";
 
 @Resolver("Cat")
 export class CatOwnerResolver {
@@ -10,7 +10,7 @@ export class CatOwnerResolver {
   ) {}
 
   @ResolveField()
-  async owner(@Parent() cat: Cat): Promise<Owner> {
+  async owner(@Parent() cat: CatEntity): Promise<OwnerEntity> {
     return this.ownerClient.findOne(cat.owner);
   }
 }

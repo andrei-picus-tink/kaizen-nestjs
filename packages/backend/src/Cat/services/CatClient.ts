@@ -1,13 +1,13 @@
-export type Cat = {
+export type CatEntity = {
   id: number;
   name: string;
   owner: number;
 };
 
-export type CreateCat = Omit<Cat, "id">;
+export type CreateCat = Omit<CatEntity, "id">;
 
 export interface CatClient {
-  findAll: () => Promise<Cat[]>;
-  findOne: (id: number) => Promise<Cat>;
-  add: (newCat: CreateCat) => Promise<Cat>;
+  findAll: () => Promise<CatEntity[]>;
+  findOne: (id: number) => Promise<CatEntity>;
+  add: (newCat: CreateCat) => Promise<CatEntity>;
 }
