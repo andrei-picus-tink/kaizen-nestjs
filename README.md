@@ -19,6 +19,7 @@ yarn
 
 ```sh
 export JWT_SECRET=blabla
+export NEXTAUTH_URL=http://localhost:3000
  
 cd packages/backend && yarn dev
 cd packages/frontend && yarn dev
