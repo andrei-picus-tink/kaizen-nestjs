@@ -21,6 +21,18 @@ describe("InMemoryCatRepository", () => {
     expect(await client.findAll()).toEqual(cats);
   });
 
+  it("should find a specific cat", async () => {
+    const client = new InMemoryCatRepository(cats);
+
+    expect(await client.findOne(1)).toEqual(cats[0]);
+  });
+
+  it("should throw for a missing cat", async () => {
+    const client = new InMemoryCatRepository(cats);
+
+    await expect(client.findOne(-1)).rejects.toThrow();
+  });
+
   it("should add a new cat", async () => {
     const newCat: CreateCat = { name: "new", owner: 3 };
 

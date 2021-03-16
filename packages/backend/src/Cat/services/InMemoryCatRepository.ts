@@ -5,6 +5,16 @@ import { Cat, CatClient, CreateCat } from "./CatClient";
 export class InMemoryCatRepository implements CatClient {
   constructor(@Inject("cats") private readonly cats: Cat[]) {}
 
+  findOne = async (id: number): Promise<Cat> => {
+    const cat = this.cats.find((cat) => cat.id === id);
+
+    if (!cat) {
+      throw new Error(`Cat ${id} not found`);
+    }
+
+    return cat;
+  };
+
   findAll = async (): Promise<Cat[]> => Promise.resolve(this.cats);
 
   add = async (newCat: CreateCat): Promise<Cat> => {

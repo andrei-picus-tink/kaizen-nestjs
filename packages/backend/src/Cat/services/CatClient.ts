@@ -8,5 +8,6 @@ export type CreateCat = Omit<Cat, "id">;
 
 export interface CatClient {
   findAll: () => Promise<Cat[]>;
+  findOne: (id: number) => Promise<Cat>;
   add: (newCat: CreateCat) => Promise<Cat>;
 }
