@@ -4,6 +4,7 @@ import { APP_GUARD } from "@nestjs/core";
 import { AuthGuard } from "./auth.guard";
 import { CatModule } from "./Cat/Cat.module";
 import { OwnerModule } from "./Owner/Owner.module";
+import { CatResolver } from "./resolvers/Cat.resolver";
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { OwnerModule } from "./Owner/Owner.module";
       provide: APP_GUARD,
       useClass: AuthGuard,
     },
+    CatResolver,
   ],
 })
 export class AppModule {}

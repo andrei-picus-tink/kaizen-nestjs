@@ -2,7 +2,6 @@ import { Module } from "@nestjs/common";
 import { InMemoryOwnerRepository } from "./services/InMemoryOwnerRepository";
 import { OwnerEntity } from "./services/OwnerClient";
 import { OwnerController } from "./controllers/OwnerController";
-import { CatOwnerResolver } from "../Cat/CatOwner.resolver";
 
 const owners: OwnerEntity[] = [
   {
@@ -21,7 +20,7 @@ const owners: OwnerEntity[] = [
   providers: [
     { provide: "OwnerClient", useClass: InMemoryOwnerRepository },
     { provide: "owners", useValue: owners },
-    CatOwnerResolver,
   ],
+  exports: ["OwnerClient"],
 })
 export class OwnerModule {}

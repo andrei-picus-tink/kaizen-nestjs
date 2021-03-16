@@ -2,7 +2,6 @@ import { Module } from "@nestjs/common";
 import { CatController } from "./controllers/CatController";
 import { InMemoryCatRepository } from "./services/InMemoryCatRepository";
 import { CatEntity } from "./services/CatClient";
-import { CatResolver } from "./Cat.resolver";
 
 const cats: CatEntity[] = [
   {
@@ -43,7 +42,7 @@ const cats: CatEntity[] = [
   providers: [
     { provide: "CatClient", useClass: InMemoryCatRepository },
     { provide: "cats", useValue: cats },
-    CatResolver,
   ],
+  exports: ["CatClient"],
 })
 export class CatModule {}
