@@ -8,8 +8,3 @@ type Cat {
     name: String!
     owner: Owner!
 }
-
-type Owner {
-    id: Int!
-    name: String!
-}
